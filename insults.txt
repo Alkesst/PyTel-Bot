@@ -25,7 +25,6 @@ agafasopes
 aganit
 aganyit
 agarrat
-agarrat
 aguantaespelmes
 aguiló
 aixafabolets
@@ -176,7 +175,6 @@ barrufell
 barrufet (mental)
 barrugo
 barrut
-barrut
 bastaix
 bastard
 batolles
@@ -225,7 +223,6 @@ bofiós
 bogia
 boginyot
 boig
-boig
 bolbol
 bolero
 bollicao
@@ -236,14 +233,11 @@ boques
 borbó
 bord
 bordegàs
-bordegàs
 bordellenc
-borinot
 borinot
 borni de cervell
 borrango
 borrasser
-borratxo
 borratxo
 borrec
 bossut
@@ -381,7 +375,6 @@ cagolla
 caguelis
 caguerot
 caguerri
-caguerri
 caguerris
 cagueta
 caguetes
@@ -451,7 +444,6 @@ cap de sopes
 cap d'estopa
 cap d'estornell
 cap de suro
-cap de suro
 cap de tartana
 cap de tort
 cap de trons
@@ -472,7 +464,6 @@ cap quadrat
 capriciós
 capritxós
 cap-sec
-capsigrany
 capsigrany
 capsot
 captaire
@@ -501,7 +492,6 @@ caragirat
 carallàs
 carall de mitja cerilla
 carallet
-carallot
 carallot
 caramot
 carbassaire
@@ -899,7 +889,6 @@ galtes de pa tou
 galtut
 galvaner
 gamarús
-gamarús
 gamat
 gambaire
 gamberro
@@ -1042,7 +1031,6 @@ llibertí
 lligaire de platja
 lligamosques
 llimac
-llimac
 llondro
 llonze
 llonzo
@@ -1075,7 +1063,6 @@ malallengua
 malallet
 malalt
 malambrós
-malandrí
 malandrí
 malànima
 malapeça
@@ -1110,7 +1097,6 @@ mallerenga
 malmirrós
 malnascut
 malnat
-malparit
 malparit
 malparlat
 malpensat
@@ -1293,7 +1279,6 @@ palatreco
 pal d'escombra
 pallasso
 pallisses
-pallús
 pallús
 palpabutxaques
 palpalloques
@@ -1510,7 +1495,6 @@ ronsa
 ronyós
 rosegaaltars
 ruc
-ruc
 rufià
 sabatot
 saburall
@@ -1629,7 +1613,6 @@ torrat
 tosc
 tossut
 tòtil
-tòtil
 totxo
 trabucaire
 trafolla
@@ -1703,7 +1686,6 @@ xapero
 xarlaire
 xarlatà
 xarlot
-xarnego
 xarnego
 xaró
 xarrupaescrots
