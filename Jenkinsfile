@@ -27,7 +27,7 @@ pipeline {
                     script {
                       sh 'pip install --user -r requirements.txt'
                       // Checks that every file can be compiled (aka checks for syntax errors)
-                      sh 'find . -type f -name '*.py' | xargs -n1 python3 -m py_compile'
+                      sh 'find . -type f -name \'*.py\' | xargs -n1 python3 -m py_compile'
                     }
                   }
                 }
