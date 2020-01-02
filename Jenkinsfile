@@ -14,7 +14,26 @@ pipeline {
             }
 
             stages {
+                stage('Checks') {
+                  agent {
+                    docker {
+                      label 'docker'
+                      image 'python:3.7-buster'
+                      args '-e HOME=$WORKSPACE -e PATH=$PATH:$WORKSPACE/.local/bin'
+                    }
+                  }
+
+                  steps {
+                    script {
+                      sh 'pip install --user -r requirements.txt'
+                      // Checks that every file can be compiled (aka checks for syntax errors)
+                      sh 'find . -type f -name '*.py' | xargs -n1 python3 -m py_compile'
+                    }
+                  }
+                }
+                
                 stage('Build Image') {
+                    when { expression { BRANCH_NAME ==~ /master|dev/ } }
                     steps {
                         script {
                             img = docker.build('alkesst/pytelbot:armv7', '--pull -f Dockerfile-armv7 .')
@@ -63,15 +82,6 @@ pipeline {
                     }
                 }
             }
-        }
-    }
-
-    post {
-        success { 
-            telegramSend 'Chavales, `s e l f` se ha actualizado\n\n@alkesst @melchor629', '-1001104881568'
-        }
-        failure {
-            telegramSend 'Oh no, [build log](' + env.BUILD_URL + ')... @alkesst @melchor629', '-1001104881568'
         }
     }
 }
