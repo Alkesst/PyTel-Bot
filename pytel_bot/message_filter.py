@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 # made with python 3
 # pylint: disable=C1001
-import re
+from telegram import Message
 from telegram.ext import BaseFilter
 
 
@@ -18,44 +18,61 @@ class NotHappyFilter(BaseFilter):
 
 class BotijoReaction(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         return 'botijo' in message.text.lower()
 
 
 class CuandoTePasaReact(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         return 'cuando te pasa' in message.text.lower()
 
 
 class EasyReact(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         return 'easy' in message.text.lower()
 
 
 class Insulto(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         return message.text[0:9].lower() == 'insulta a'
 
 
 class Thicc(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         text = message.text.lower()
         return 'thicc' in text or 't h i c c' in text
 
 
 class AVeces(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         return 'a veces' in message.text or "habeces" in message.text
 
 
 class Gracias(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         text = message.text.lower()
-        return 'gracias ' in message.text.lower() or \
-               message.text.endswith('gracias') or \
-               message.text.endswith('gracias.')
+        return 'gracias ' in text or \
+               text.endswith('gracias') or \
+               text.endswith('gracias.')
+
 
 class SadReacts(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         return " sad " in message.text.lower() or \
                 message.text.lower() == 'sad' or \
                 'sad ' in message.text.lower() or \
@@ -64,6 +81,8 @@ class SadReacts(BaseFilter):
 
 class BuenosDias(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         text = message.text.lower()
         return "buenos dias españa" in text or \
                "buenos días españa" in text or \
@@ -73,6 +92,8 @@ class BuenosDias(BaseFilter):
 
 class RevertedReact(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         text = message.text.lower()
         return 'reverted' in text or \
             'arturo perez reverted' in text or \
@@ -81,6 +102,8 @@ class RevertedReact(BaseFilter):
 
 class ReverteReact(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         text = message.text.lower()
         return 'arturo pérez-reverte' in text or \
             'arturo perez-reverte' in text or \
@@ -93,10 +116,14 @@ class ReverteReact(BaseFilter):
 
 class Xdd(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         return 'xd' in message.text
 
 
 class BumperCars(BaseFilter):
     def filter(self, message):
+        if not message.text:
+            return False
         return 'coches de choque' in message.text.lower() or \
                'coches chocones' in message.text.lower()
