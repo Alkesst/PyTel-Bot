@@ -1061,16 +1061,33 @@ class BotActions(object):
         context.bot.send_voice(chat_id=chat_id, voice=open(f'{BotActions.pytel_path}/vosvone.opus', 'rb'))
 
     @staticmethod
-    # trae la alegría del viernes al grupo
     def viernes(update: Update, context: CallbackContext):
+        BotActions.viernesSelect(update=update, context=context, hd=False)
+
+    @staticmethod
+    def viernesHD(update: Update, context: CallbackContext):
+        BotActions.viernesSelect(update=update, context=context, hd=True)
+
+    @staticmethod
+    # trae la alegría del viernes al grupo
+    # Brings friday happiness to the group
+    def viernesSelect(update: Update, context: CallbackContext, hd: bool):
         # Nota: esta fecha está en UTC, por lo que el viernes empezará mas tarde siempre
+        # Note: this date is in UTC, so fridays will start at a different hour
         current_time = update.message.date
         current_weekday = current_time.isoweekday()
         chat_id = update.message.chat.id
         user_id = update.message.from_user.id
         BotActions.common_process(chat_id, user_id)
         if current_weekday is 5:
-            text = "OOOOOLE LOS VIERNEEEEES!!\nhttps://www.youtube.com/watch?v=1p3-w7O4pVE"
+            if hd:
+                context.bot.send_video(chat_id=chat_id,
+                                       video=open(f'{BotActions.pytel_path}/viernesHD.mp4', 'rb'),
+                                       caption="Toma viernes de calidad")
+            else:
+                #text = "OOOOOLE LOS VIERNEEEEES!!\nhttps://www.youtube.com/watch?v=1p3-w7O4pVE"
+                context.bot.send_video_note(chat_id=chat_id,
+                                            video_note=open(f'{BotActions.pytel_path}/viernes.mp4', 'rb'))
         else:
             text = "Hoy no es viernes :("
-        context.bot.send_message(chat_id=chat_id, text=text)
+            context.bot.send_message(chat_id=chat_id, text=text)
